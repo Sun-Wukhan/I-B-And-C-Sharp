@@ -1,0 +1,45 @@
+# Build artefacts
+bin/
+obj/
+
+# VS/IDE files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# NuGet
+*.nupkg
+.nuget/
+
+# ASP.NET Core launch settings
+Properties/launchSettings.json
+
+# Entity Framework migrations
+Migrations/
+
+# User secrets (if used)
+secrets.json
+
+# Docker
+docker-compose.override.yml
+.env
+
+# Logs and debug
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test results
+TestResults/
