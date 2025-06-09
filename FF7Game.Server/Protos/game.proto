@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option csharp_namespace = "FF7Game.Server";
+
+package ff7game;
+
+// Character information
+message Character {
+  string name = 1;
+  int32 level = 2;
+  int32 hp = 3;
+  int32 mp = 4;
+  repeated string materia = 5;
+}
+
+// Battle request
+message BattleRequest {
+  string character_name = 1;
+  string enemy_name = 2;
+}
+
+// Battle response
+message BattleResponse {
+  bool victory = 1;
+  int32 damage_dealt = 2;
+  int32 damage_received = 3;
+  int32 exp_gained = 4;
+  repeated string items_dropped = 5;
+}
+
+// Game service definition
+service GameService {
+  // Get character information
+  rpc GetCharacter (CharacterRequest) returns (Character);
+  
+  // Start a battle
+  rpc StartBattle (BattleRequest) returns (BattleResponse);
+  
+  // Level up character
+  rpc LevelUp (CharacterRequest) returns (Character);
+}
+
+// Character request message
+message CharacterRequest {
+  string character_name = 1;
+} 
